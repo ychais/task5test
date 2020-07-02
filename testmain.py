@@ -13,12 +13,14 @@ def main():
 @app.route("/cabinet", methods=['GET', 'POST'])
 
 def cabinet():
-    return render_template('cabinet.html')
+#    return render_template('cabinet.html')
 
-def upload_file():
+#def upload_file():
     if request.method == "POST":
         ff = request.files['file']
         ff.save(os.path.join(app.config['UPLOAD_FOLDER'], ff.filename))
+    else:
+        return render_template('cabinet.html')
     return redirect(url_for('uploaded_file', filename=ff.filename))
 
 @app.route("/upload/<filename>")
