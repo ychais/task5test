@@ -8,6 +8,7 @@ app.secret_key = 'secret key'
 app.config['UPLOAD_FOLDER'] = 'upload'
 
 @app.route("/", methods=["GET", "POST"])
+def main():
 	return redirect ('/cabinet')
 
 @app.route("/cabinet", methods=['GET', 'POST'])
