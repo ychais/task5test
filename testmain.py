@@ -19,7 +19,7 @@ def upload_file():
     if request.method == "POST":
         ff = request.files['file']
         ff.save(os.path.join(app.config['UPLOAD_FOLDER'], ff.filename))
-    return redirect(url_for('uploaded_file', filename=filename))
+    return redirect(url_for('uploaded_file', filename=ff.filename))
 
 @app.route("/upload/<filename>")
 def uploaded_file (filename):
