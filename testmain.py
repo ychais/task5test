@@ -2,19 +2,18 @@ from flask import Flask, render_template, flash, request, redirect, send_from_di
 import os
 
 
-
 app = Flask (__name__)
 app.secret_key = 'secret key'
 app.config['UPLOAD_FOLDER'] = 'upload'
 
 @app.route("/", methods=["GET", "POST"])
 def main():
-	return redirect ('/cabinet')
+    return redirect ('/cabinet')
 
 @app.route("/cabinet", methods=['GET', 'POST'])
 
 def cabinet():
-	return render_template('cabinet.html')
+    return render_template('cabinet.html')
 
 def upload_file():
     if request.method == "POST":
@@ -28,8 +27,7 @@ def uploaded_file (filename):
 
 @app.route('/favicon.ico')
 def favicon():
-	return send_from_directory("static", "favicon.ico", mimetype="image/vnd.microsoft.icon")
+    return send_from_directory("static", "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 if __name__ == "__main__":
-	app.run(host='localhost', port=5000, debug=True)
-
+    app.run(host='localhost', port=5000, debug=True)
