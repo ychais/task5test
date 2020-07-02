@@ -49,3 +49,10 @@ form {
 .button:hover {
     opacity: 0.8;
 }
+
+.form2 {
+    grid-column-start: 0;
+    grid-column-end: 3;
+    border: 3px solid #f1f1f1;
+    text-align: center;
+}
